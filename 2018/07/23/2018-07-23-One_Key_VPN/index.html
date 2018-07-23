@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://mobynote.com">
-  <title>Archives | whitespace</title>
+  <title>一键连接VPN (Cisco AnyConnect Client) | whitespace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is an attitude">
-<meta name="keywords" content="留白 whitespace">
-<meta property="og:type" content="website">
-<meta property="og:title" content="whitespace">
-<meta property="og:url" content="http://mobynote.com/archives/index.html">
+  <meta name="description" content="公司VPN使用了Cisco Anyconnect客户端，并且有用户名密码+动态验证码双重认证，每次连接都需要繁琐的输入用户名密码，打开手机查看动态验证码，再输入到客户端。懒惰就是生产力，所以，我们要想办法偷懒。 1. 配置前准备 Cisco Client Username:Password Google Authenticator  2. 生成动态验证码安装oath-toolkit使用brew直接">
+<meta name="keywords" content="vpn,cisco,anyconnect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一键连接VPN (Cisco AnyConnect Client)">
+<meta property="og:url" content="http://mobynote.com/2018/07/23/2018-07-23-One_Key_VPN/index.html">
 <meta property="og:site_name" content="whitespace">
-<meta property="og:description" content="This is an attitude">
+<meta property="og:description" content="公司VPN使用了Cisco Anyconnect客户端，并且有用户名密码+动态验证码双重认证，每次连接都需要繁琐的输入用户名密码，打开手机查看动态验证码，再输入到客户端。懒惰就是生产力，所以，我们要想办法偷懒。 1. 配置前准备 Cisco Client Username:Password Google Authenticator  2. 生成动态验证码安装oath-toolkit使用brew直接">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-23T06:00:46.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="whitespace">
-<meta name="twitter:description" content="This is an attitude">
+<meta name="twitter:title" content="一键连接VPN (Cisco AnyConnect Client)">
+<meta name="twitter:description" content="公司VPN使用了Cisco Anyconnect客户端，并且有用户名密码+动态验证码双重认证，每次连接都需要繁琐的输入用户名密码，打开手机查看动态验证码，再输入到客户端。懒惰就是生产力，所以，我们要想办法偷懒。 1. 配置前准备 Cisco Client Username:Password Google Authenticator  2. 生成动态验证码安装oath-toolkit使用brew直接">
   
     <link rel="alternative" href="/atom.xml" title="whitespace" type="application/atom+xml">
   
@@ -142,36 +143,87 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2018-07-23-One_Key_VPN" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/23/2018-07-23-One_Key_VPN/" class="archive-article-date">
-  	<time datetime="2018-07-23T01:48:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/23/2018-07-23-One_Key_VPN/">一键连接VPN (Cisco AnyConnect Client)</a>
+    <h1 class="article-title" itemprop="name">
+      一键连接VPN (Cisco AnyConnect Client)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/23/2018-07-23-One_Key_VPN/" class="archive-article-date">
+  	<time datetime="2018-07-23T01:48:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>公司VPN使用了Cisco Anyconnect客户端，并且有用户名密码+动态验证码双重认证，每次连接都需要繁琐的输入用户名密码，打开手机查看动态验证码，再输入到客户端。懒惰就是生产力，所以，我们要想办法偷懒。</p>
+<h3 id="1-配置前准备"><a href="#1-配置前准备" class="headerlink" title="1. 配置前准备"></a>1. 配置前准备</h3><ul>
+<li>Cisco Client</li>
+<li>Username:Password</li>
+<li>Google Authenticator</li>
+</ul>
+<h3 id="2-生成动态验证码"><a href="#2-生成动态验证码" class="headerlink" title="2. 生成动态验证码"></a>2. 生成动态验证码</h3><h4 id="安装oath-toolkit"><a href="#安装oath-toolkit" class="headerlink" title="安装oath-toolkit"></a>安装oath-toolkit</h4><p>使用<code>brew</code>直接安装，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install oath-toolkit</span><br></pre></td></tr></table></figure>
+<h4 id="记录动态验证码的Token"><a href="#记录动态验证码的Token" class="headerlink" title="记录动态验证码的Token"></a>记录动态验证码的Token</h4><p>将Google Authenticator绑定的二维码扫描出来，拿到一段Token，保存到文件<code>~/.optkeys</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">google=UKPPIDEALLKPYTT9</span><br></pre></td></tr></table></figure>
+<h4 id="创建脚本生成动态验证码"><a href="#创建脚本生成动态验证码" class="headerlink" title="创建脚本生成动态验证码"></a>创建脚本生成动态验证码</h4><p>新建文件<code>~/oath.sh</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#fork from http://superuser.com/questions/462478/is-there-a-google-authenticator-desktop-client , by Peter Beckman</span></span><br><span class="line"></span><br><span class="line">scriptname=`basename <span class="variable">$0</span>`</span><br><span class="line"><span class="keyword">if</span> [ -z <span class="variable">$1</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$scriptname</span>: Service Name Req'd"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Usage:"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"   otp google"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Configuration: <span class="variable">$HOME</span>/.otpkeys"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Format: name=key"</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">otpkey=` grep ^<span class="variable">$1</span> <span class="variable">$HOME</span>/.otpkeys | cut -d<span class="string">"="</span> -f 2 | sed <span class="string">"s/ //g"</span> `</span><br><span class="line"><span class="keyword">if</span> [ -z <span class="variable">$otpkey</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$scriptname</span>: Bad Service Name"</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">token=`/usr/<span class="built_in">local</span>/bin/oathtool --totp -b <span class="variable">$otpkey</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$token</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$token</span> | /usr/bin/pbcopy</span><br></pre></td></tr></table></figure>
+<p>使用<code>oath.sh</code>生成验证码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh ~/oath.sh google</span><br><span class="line">112358</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置连接VPN"><a href="#3-配置连接VPN" class="headerlink" title="3. 配置连接VPN"></a>3. 配置连接VPN</h3><h4 id="编写VPN连接脚本-vpn-sh"><a href="#编写VPN连接脚本-vpn-sh" class="headerlink" title="编写VPN连接脚本~/vpn.sh"></a>编写VPN连接脚本<code>~/vpn.sh</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> -eq 1 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">command</span>=<span class="variable">$1</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">command</span>=<span class="string">'connect'</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$command</span> == <span class="string">'stop'</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'stop vpn'</span></span><br><span class="line">    /opt/cisco/anyconnect/bin/vpn disconnect</span><br><span class="line">    <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'start vpn'</span></span><br><span class="line">username=用户名</span><br><span class="line">passwd=密码</span><br><span class="line">authtype=认证类型</span><br><span class="line">authcode=`sh ./oath.sh google`</span><br><span class="line"></span><br><span class="line">/opt/cisco/anyconnect/bin/vpn -s &lt;&lt; EOF</span><br><span class="line">connect VPN地址</span><br><span class="line"><span class="variable">$username</span></span><br><span class="line"><span class="variable">$passwd</span></span><br><span class="line"><span class="variable">$authtype</span></span><br><span class="line"><span class="variable">$authcode</span></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>将内容替换为自己的配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用户名，VPN连接的用户名</span><br><span class="line">密码</span><br><span class="line">认证类型，我司的Google Authenticator是4</span><br><span class="line">VPN地址，我司的是xdc.vpn.thoughtworks.com</span><br></pre></td></tr></table></figure>
+<h4 id="连接VPN"><a href="#连接VPN" class="headerlink" title="连接VPN"></a>连接VPN</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vpn.sh start</span><br></pre></td></tr></table></figure>
+<h4 id="关闭VPN"><a href="#关闭VPN" class="headerlink" title="关闭VPN"></a>关闭VPN</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./vpn.sh stop</span><br></pre></td></tr></table></figure>
+<p>还要更简单，可以在profile中配置alias，比如在<code>.zshrc</code>中加入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># # aliases for vpn</span></span><br><span class="line"><span class="built_in">alias</span> von=<span class="string">"sh ~/vpn.sh start"</span></span><br><span class="line"><span class="built_in">alias</span> voff=<span class="string">"sh ~/vpn.sh stop"</span></span><br></pre></td></tr></table></figure>
+<p>现在即可使用<code>von</code>和<code>voff</code>快速开关VPN了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wxpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,19 +243,96 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mobynote.com/2018/07/23/2018-07-23-One_Key_VPN/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -226,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
