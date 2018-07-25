@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1ftmco7adnuj304i04vjrq.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1ftmco6wpb5j305u01igli.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1ftmco7d3efj308u059mxj.jpg">
-<meta property="og:updated_time" content="2018-07-25T12:23:33.856Z">
+<meta property="og:updated_time" content="2018-07-25T12:46:15.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用AHK阻止Windows系统自动锁定">
 <meta name="twitter:description" content="背景：最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。  经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键">
@@ -66,14 +66,20 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/">文章</a></li>
+				<li><a href="/categories/tech/">技术笔记</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+            
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于</a>
     			
             
 		</nav>
@@ -132,7 +138,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/">文章</a></li>
+					<li style="width: 50%"><a href="/categories/tech/">技术笔记</a></li>
 		        
 				</ul>
 			</nav>
@@ -171,7 +177,8 @@
 <p><strong>背景：</strong>最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。</p>
 </blockquote>
 <p>经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键盘周期性地动起来，而且尽量不影响正常的操作。</p>
-<p>AutoHotKey是一款Windows上的自动化快捷键脚本（Automation, Hotkeys, Scripting）。<a href="https://autohotkey.com/docs/AutoHotkey.htm" target="_blank" rel="noopener">https://autohotkey.com/docs/AutoHotkey.htm</a><br><a id="more"></a></p>
+<a id="more"></a>
+<p>AutoHotKey是一款Windows上的自动化快捷键脚本（Automation, Hotkeys, Scripting）。<a href="https://autohotkey.com/docs/AutoHotkey.htm" target="_blank" rel="noopener">https://autohotkey.com/docs/AutoHotkey.htm</a></p>
 <h4 id="安装AHK"><a href="#安装AHK" class="headerlink" title="安装AHK"></a>安装AHK</h4><p>从官网下载安装包，双击进行安装。</p>
 <h4 id="编写AHK脚本"><a href="#编写AHK脚本" class="headerlink" title="编写AHK脚本"></a>编写AHK脚本</h4><p>将下面脚本保存为<code>Iamhere.ahk</code>文件。<br>（该脚本会每分钟自动按下键盘的<code>Scroll Lock</code>键同时移动鼠标一个像素并立即移回原位）</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">; I'm always online</span><br><span class="line">; Press Scroll Lock key and move mouse one pixel per minute.</span><br><span class="line">; Quit: Press Ctrl + Alt + Q.</span><br><span class="line"></span><br><span class="line">counter := new SecondCounter</span><br><span class="line">counter.Start()</span><br><span class="line">^!q::</span><br><span class="line">	counter.Stop()</span><br><span class="line">ExitApp</span><br><span class="line"></span><br><span class="line">; An example class for counting the seconds...</span><br><span class="line">class SecondCounter &#123;</span><br><span class="line">    __New() &#123;</span><br><span class="line">        this.interval := 60000</span><br><span class="line">        this.timer := ObjBindMethod(this, "Tick")</span><br><span class="line">    &#125;</span><br><span class="line">    Start() &#123;</span><br><span class="line">        timer := this.timer</span><br><span class="line">        SetTimer % timer, % this.interval</span><br><span class="line">    &#125;</span><br><span class="line">    Stop() &#123;</span><br><span class="line">        timer := this.timer</span><br><span class="line">        SetTimer % timer, Off</span><br><span class="line">    &#125;</span><br><span class="line">    Tick() &#123;</span><br><span class="line">		Send &#123;ScrollLock&#125;</span><br><span class="line">		Send &#123;ScrollLock&#125;</span><br><span class="line">		MouseMove, 0, 1, 0, R</span><br><span class="line">		MouseMove, 0, -1, 0, R</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -380,8 +387,8 @@
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
-		innerArchive: false,
-		showTags: false
+		innerArchive: true,
+		showTags: true
 	}
 </script>
 
@@ -400,18 +407,113 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+    
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      
+        
+      
+        
+      
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">autohotkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ahk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">emacs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vpn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cisco</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">anyconnect</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            3、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
     
 
     
