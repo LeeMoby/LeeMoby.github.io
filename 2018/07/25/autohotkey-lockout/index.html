@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://mobynote.com">
-  <title>Archives | whitespace</title>
+  <title>使用AHK阻止Windows系统自动锁定 | whitespace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is an attitude">
-<meta name="keywords" content="留白 whitespace">
-<meta property="og:type" content="website">
-<meta property="og:title" content="whitespace">
-<meta property="og:url" content="http://mobynote.com/archives/index.html">
+  <meta name="description" content="背景：最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。  经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键">
+<meta name="keywords" content="autohotkey,windows,ahk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用AHK阻止Windows系统自动锁定">
+<meta property="og:url" content="http://mobynote.com/2018/07/25/autohotkey-lockout/index.html">
 <meta property="og:site_name" content="whitespace">
-<meta property="og:description" content="This is an attitude">
+<meta property="og:description" content="背景：最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。  经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1ftmco7adnuj304i04vjrq.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1ftmco6wpb5j305u01igli.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1ftmco7d3efj308u059mxj.jpg">
+<meta property="og:updated_time" content="2018-07-25T11:54:58.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="whitespace">
-<meta name="twitter:description" content="This is an attitude">
+<meta name="twitter:title" content="使用AHK阻止Windows系统自动锁定">
+<meta name="twitter:description" content="背景：最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。  经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1ftmco7adnuj304i04vjrq.jpg">
   
     <link rel="alternative" href="/atom.xml" title="whitespace" type="application/atom+xml">
   
@@ -142,36 +147,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-autohotkey-lockout" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/25/autohotkey-lockout/" class="archive-article-date">
-  	<time datetime="2018-07-25T08:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/25/autohotkey-lockout/">使用AHK阻止Windows系统自动锁定</a>
+    <h1 class="article-title" itemprop="name">
+      使用AHK阻止Windows系统自动锁定
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/25/autohotkey-lockout/" class="archive-article-date">
+  	<time datetime="2018-07-25T08:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>背景：</strong>最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。</p>
+</blockquote>
+<p>经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键盘周期性地动起来，而且尽量不影响正常的操作。</p>
+<p>AutoHotKey是一款Windows上的自动化快捷键脚本（Automation, Hotkeys, Scripting）。<a href="https://autohotkey.com/docs/AutoHotkey.htm" target="_blank" rel="noopener">https://autohotkey.com/docs/AutoHotkey.htm</a><br><a id="more"></a></p>
+<h4 id="安装AHK"><a href="#安装AHK" class="headerlink" title="安装AHK"></a>安装AHK</h4><p>从官网下载安装包，双击进行安装。</p>
+<h4 id="编写AHK脚本"><a href="#编写AHK脚本" class="headerlink" title="编写AHK脚本"></a>编写AHK脚本</h4><p>将下面脚本保存为<code>Iamhere.ahk</code>文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">; I'm always online</span><br><span class="line">; Press Scroll Lock key and move mouse one pixel per minute.</span><br><span class="line">; Quit: Press Ctrl + Alt + Q.</span><br><span class="line"></span><br><span class="line">counter := new SecondCounter</span><br><span class="line">counter.Start()</span><br><span class="line">^!q::</span><br><span class="line">	counter.Stop()</span><br><span class="line">ExitApp</span><br><span class="line"></span><br><span class="line">; An example class for counting the seconds...</span><br><span class="line">class SecondCounter &#123;</span><br><span class="line">    __New() &#123;</span><br><span class="line">        this.interval := 60000</span><br><span class="line">        this.timer := ObjBindMethod(this, "Tick")</span><br><span class="line">    &#125;</span><br><span class="line">    Start() &#123;</span><br><span class="line">        timer := this.timer</span><br><span class="line">        SetTimer % timer, % this.interval</span><br><span class="line">    &#125;</span><br><span class="line">    Stop() &#123;</span><br><span class="line">        timer := this.timer</span><br><span class="line">        SetTimer % timer, Off</span><br><span class="line">    &#125;</span><br><span class="line">    Tick() &#123;</span><br><span class="line">		Send &#123;ScrollLock&#125;</span><br><span class="line">		Send &#123;ScrollLock&#125;</span><br><span class="line">		MouseMove, 0, 1, 0, R</span><br><span class="line">		MouseMove, 0, -1, 0, R</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="生成exe文件"><a href="#生成exe文件" class="headerlink" title="生成exe文件"></a>生成exe文件</h4><p>使用AutoHotKey将刚才的脚本文件转换为可执行的exe文件，配上图标。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1ftmco7adnuj304i04vjrq.jpg" alt="I&#39;mhere"></p>
+<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>现在就可以使用双击使用啦。<br>启动后，会在任务栏出现小图标 。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1ftmco6wpb5j305u01igli.jpg" alt="exitprogram"></p>
+<p>如果要退出右键任务栏的小图标，点击Exit （<strong>快捷键：</strong><code>Ctrl + Alt + Q</code>）。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1ftmco7d3efj308u059mxj.jpg" alt="taskbar"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wxpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,7 +239,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -204,123 +252,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://mobynote.com/2018/07/25/autohotkey-lockout/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/23/emacs-tutorial/" class="archive-article-date">
-  	<time datetime="2018-07-23T07:28:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/23/emacs-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Emacs Tutorial (26.1)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/23/emacs-tutorial/">Emacs Tutorial (26.1)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">emacs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech//" class="article-tag-list-link color5">tech</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/23/onekey_vpn/" class="archive-article-date">
-  	<time datetime="2018-07-23T01:48:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/23/onekey_vpn/">一键连接VPN (Cisco AnyConnect Client)</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vpn</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">cisco</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">anyconnect</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech//" class="article-tag-list-link color5">tech</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -343,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
