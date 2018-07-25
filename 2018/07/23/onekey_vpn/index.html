@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="whitespace">
 <meta property="og:description" content="公司VPN使用了Cisco Anyconnect客户端，并且有用户名密码+动态验证码双重认证，每次连接都需要繁琐的输入用户名密码，打开手机查看动态验证码，再输入到客户端。懒惰就是生产力，所以，我们要想办法偷懒。 1. 配置前准备 Cisco Client Username:Password Google Authenticator  2. 生成动态验证码安装oath-toolkit使用brew直接">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-23T07:41:44.462Z">
+<meta property="og:updated_time" content="2018-07-25T08:38:59.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一键连接VPN (Cisco AnyConnect Client)">
 <meta name="twitter:description" content="公司VPN使用了Cisco Anyconnect客户端，并且有用户名密码+动态验证码双重认证，每次连接都需要繁琐的输入用户名密码，打开手机查看动态验证码，再输入到客户端。懒惰就是生产力，所以，我们要想办法偷懒。 1. 配置前准备 Cisco Client Username:Password Google Authenticator  2. 生成动态验证码安装oath-toolkit使用brew直接">
@@ -171,6 +171,7 @@
 </ul>
 <h3 id="2-生成动态验证码"><a href="#2-生成动态验证码" class="headerlink" title="2. 生成动态验证码"></a>2. 生成动态验证码</h3><h4 id="安装oath-toolkit"><a href="#安装oath-toolkit" class="headerlink" title="安装oath-toolkit"></a>安装oath-toolkit</h4><p>使用<code>brew</code>直接安装，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install oath-toolkit</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="记录动态验证码的Token"><a href="#记录动态验证码的Token" class="headerlink" title="记录动态验证码的Token"></a>记录动态验证码的Token</h4><p>将Google Authenticator绑定的二维码扫描出来，拿到一段Token，保存到文件<code>~/.optkeys</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">google=UKPPIDEALLKPYTT9</span><br></pre></td></tr></table></figure>
 <h4 id="创建脚本生成动态验证码"><a href="#创建脚本生成动态验证码" class="headerlink" title="创建脚本生成动态验证码"></a>创建脚本生成动态验证码</h4><p>新建文件<code>~/oath.sh</code></p>
