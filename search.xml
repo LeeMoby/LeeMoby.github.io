@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Build RDM from source]]></title>
+    <url>%2F2018%2F07%2F31%2Finstall-rdm-on-macos%2F</url>
+    <content type="text"><![CDATA[Redis Desktop Manager可以从源码编译用以测试和学习。但如果需要使用，则应该从官网下载使用。（Windows免费，MacOS版本需要订阅）。以下记录了从源码编译rdm的方法。 Get source1$ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 rdm &amp;&amp; cd ./rdm Build on macOS Install Xcode with Xcode build tools. Install Homebrew Copy plist 1$ cd ./src &amp;&amp; cp ./resources/Info.plist.sample ./resources/Info.plist Building RDM dependencies require i.a. openssl and make. Install them: 1$ brew install openssl cmake Build RDM dependencies 1$ ./configure Install qt and qt-creator 12$ brew install qt$ brew cask install qt-creator Copy crashreporter to directory (download) 1$ cp ~/Downloads/crashreporter ./bin/osx/debug/crashreporter Run Qt Creator open project ./rdm/src/rdm.pro open Projects –&gt;Manage Kits Qt Versions: Add – &gt; selected /usr/local/Cellar/qt/5.11.1/bin/qmake Kits : Qt version –&gt; selected Qt 5.11.1(5.11.1) Kits: Compiler –&gt; C &amp; C++ –&gt; Clang(C,x86 64bit in /usr/bin) &amp; Clang(C++, x86 64bit in /usr/bin) update build settings: selected Edit build configuration Release Modify rdm.pro 1#debug: CONFIG-=app_bundle Run，Click Run button Move app to applications 1$ mv ./bin/osx/debug/rdm.app ~/Applications/]]></content>
+      <categories>
+        <category>tech</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+        <tag>rdm</tag>
+        <tag>macos</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用AHK阻止Windows系统自动锁定]]></title>
     <url>%2F2018%2F07%2F25%2Fautohotkey-lockout%2F</url>
     <content type="text"><![CDATA[背景：最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。 经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键盘周期性地动起来，而且尽量不影响正常的操作。 AutoHotKey是一款Windows上的自动化快捷键脚本（Automation, Hotkeys, Scripting）。https://autohotkey.com/docs/AutoHotkey.htm 安装AHK从官网下载安装包，双击进行安装。 编写AHK脚本将下面脚本保存为Iamhere.ahk文件。（该脚本会每分钟自动按下键盘的Scroll Lock键同时移动鼠标一个像素并立即移回原位） 12345678910111213141516171819202122232425262728293031; I'm always online; Press Scroll Lock key and move mouse one pixel per minute.; Quit: Press Ctrl + Alt + Q.counter := new SecondCountercounter.Start()^!q:: counter.Stop()ExitApp; An example class for counting the seconds...class SecondCounter &#123; __New() &#123; this.interval := 60000 this.timer := ObjBindMethod(this, "Tick") &#125; Start() &#123; timer := this.timer SetTimer % timer, % this.interval &#125; Stop() &#123; timer := this.timer SetTimer % timer, Off &#125; Tick() &#123; Send &#123;ScrollLock&#125; Send &#123;ScrollLock&#125; MouseMove, 0, 1, 0, R MouseMove, 0, -1, 0, R &#125;&#125; 可以替换ScrollLock为其他键，鼠标移动是MouseMove, 0, 1, 0, R指的是在相对位置纵向移动一个像素，参数依次是：12340（横向）,1（纵向）,0（速度，值越小速度越快）, R（相对位置，如果绝对位置则不用设置） 生成exe文件使用AutoHotKey将刚才的脚本文件转换为可执行的exe文件，配上图标。 运行现在就可以使用双击使用啦。启动后，会在任务栏出现小图标 。 如果要退出右键任务栏的小图标，点击Exit （快捷键：Ctrl + Alt + Q）。]]></content>

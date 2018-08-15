@@ -112,24 +112,30 @@
 
 
 
-  <meta name="description" content="一种态度">
-<meta name="keywords" content="留白 whitespace mobynote">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mobynote">
-<meta property="og:url" content="http://mobynote.com/index.html">
+  <meta name="description" content="Redis Desktop Manager可以从源码编译用以测试和学习。但如果需要使用，则应该从官网下载使用。（Windows免费，MacOS版本需要订阅）。以下记录了从源码编译rdm的方法。  Get source1$ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 rdm &amp;amp;">
+<meta name="keywords" content="redis,rdm,macos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Build RDM from source">
+<meta property="og:url" content="http://mobynote.com/2018/07/31/install-rdm-on-macos/index.html">
 <meta property="og:site_name" content="Mobynote">
-<meta property="og:description" content="一种态度">
+<meta property="og:description" content="Redis Desktop Manager可以从源码编译用以测试和学习。但如果需要使用，则应该从官网下载使用。（Windows免费，MacOS版本需要订阅）。以下记录了从源码编译rdm的方法。  Get source1$ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 rdm &amp;amp;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1ftste16zr5j31kw0zgdl7.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1ftste0zimjj31kw19faio.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1ftste0fthzj31f61447fg.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1ftste01z6dj31f6144jzk.jpg">
+<meta property="og:updated_time" content="2018-07-31T02:05:22.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mobynote">
-<meta name="twitter:description" content="一种态度">
+<meta name="twitter:title" content="Build RDM from source">
+<meta name="twitter:description" content="Redis Desktop Manager可以从源码编译用以测试和学习。但如果需要使用，则应该从官网下载使用。（Windows免费，MacOS版本需要订阅）。以下记录了从源码编译rdm的方法。  Get source1$ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 rdm &amp;amp;">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1ftste16zr5j31kw0zgdl7.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://mobynote.com/"/>
+  <link rel="canonical" href="http://mobynote.com/2018/07/31/install-rdm-on-macos/"/>
 
 
 
@@ -139,7 +145,7 @@
   };
 </script>
 
-  <title>Mobynote</title>
+  <title>Build RDM from source | Mobynote</title>
   
 
 
@@ -186,8 +192,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,7 +229,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
@@ -315,9 +320,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -349,11 +354,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/31/install-rdm-on-macos/" itemprop="url">
-                  Build RDM from source
-                </a>
+          <h1 class="post-title" itemprop="name headline">Build RDM from source
               
             
           </h1>
@@ -434,9 +435,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>Redis Desktop Manager可以从源码编译用以测试和学习。但如果需要使用，则应该从<a href="https://redisdesktop.com/download" target="_blank" rel="noopener">官网</a>下载使用。（Windows免费，MacOS版本需要订阅）。以下记录了从源码编译rdm的方法。</p>
 </blockquote>
 <h3 id="Get-source"><a href="#Get-source" class="headerlink" title="Get source"></a>Get source</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 rdm &amp;&amp; <span class="built_in">cd</span> ./rdm</span><br></pre></td></tr></table></figure>
@@ -489,8 +488,6 @@
 <p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1ftste0fthzj31f61447fg.jpg" alt="image-20180730183529605"></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1ftste01z6dj31f6144jzk.jpg" alt="image-20180730183705248"></p>
 
-          
-        
       
     </div>
 
@@ -503,371 +500,74 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Wow! Thanks!</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="留白 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="留白 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mobynote.com/2018/07/25/autohotkey-lockout/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="留白">
-      <meta itemprop="description" content="一种态度">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mobynote">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/25/autohotkey-lockout/" itemprop="url">
-                  使用AHK阻止Windows系统自动锁定
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-25 16:49:23 / 修改时间：20:46:15" itemprop="dateCreated datePublished" datetime="2018-07-25T16:49:23+08:00">2018-07-25</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/redis/" rel="tag"># redis</a>
           
-
+            <a href="/tags/rdm/" rel="tag"># rdm</a>
           
-            
+            <a href="/tags/macos/" rel="tag"># macos</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <blockquote>
-<p><strong>背景：</strong>最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。</p>
-</blockquote>
-<p>经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键盘周期性地动起来，而且尽量不影响正常的操作。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/25/autohotkey-lockout/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/25/autohotkey-lockout/" rel="next" title="使用AHK阻止Windows系统自动锁定">
+                <i class="fa fa-chevron-left"></i> 使用AHK阻止Windows系统自动锁定
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mobynote.com/2018/07/23/emacs-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="留白">
-      <meta itemprop="description" content="一种态度">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mobynote">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/23/emacs-tutorial/" itemprop="url">
-                  Emacs Tutorial (26.1)
-                </a>
-              
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-23 15:28:53" itemprop="dateCreated datePublished" datetime="2018-07-23T15:28:53+08:00">2018-07-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-25 20:46:28" itemprop="dateModified" datetime="2018-07-25T20:46:28+08:00">2018-07-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <blockquote>
-<p>这是Emacs的官方教程，在Emacs中可以随时使用<code>C-h t</code>阅读。作为Emacs新人，建议从这篇教程开始学习Emacs。</p>
-</blockquote>
-<p>Emacs 命令组合键有两个：</p>
-<ul>
-<li><code>C-&lt;chr&gt;</code>: 按住<code>Control</code>键同时输入其他字符</li>
-<li><p><code>M-&lt;chr&gt;</code>: 按住<code>Meta</code>或<code>Alt</code>键同时输入其他字符</p>
-<blockquote>
-<p><strong>注意：</strong>结束Emacs会话，使用 C-x C-c。</p>
-<p>放弃输入一半的命令，使用C-g。</p>
-<p>退出帮助手册，使用C-x k \<return>。</return></p>
-</blockquote>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/23/emacs-tutorial/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -877,193 +577,15 @@
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mobynote.com/2018/07/23/onekey_vpn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="留白">
-      <meta itemprop="description" content="一种态度">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mobynote">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/23/onekey_vpn/" itemprop="url">
-                  一键连接VPN (Cisco AnyConnect Client)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-23 09:48:17" itemprop="dateCreated datePublished" datetime="2018-07-23T09:48:17+08:00">2018-07-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-30 08:56:51" itemprop="dateModified" datetime="2018-07-30T08:56:51+08:00">2018-07-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>公司VPN使用了Cisco Anyconnect客户端，并且有用户名密码+动态验证码双重认证，每次连接都需要繁琐的输入用户名密码，打开手机查看动态验证码，再输入到客户端。懒惰就是生产力，所以，我们要想办法偷懒。</p>
-<h3 id="1-配置前准备"><a href="#1-配置前准备" class="headerlink" title="1. 配置前准备"></a>1. 配置前准备</h3><ul>
-<li>Cisco Client</li>
-<li>Username:Password</li>
-<li>Google Authenticator</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/23/onekey_vpn/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1084,8 +606,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1192,6 +723,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Get-source"><span class="nav-number">1.</span> <span class="nav-text">Get source</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-on-macOS"><span class="nav-number">2.</span> <span class="nav-text">Build on macOS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1333,6 +880,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
