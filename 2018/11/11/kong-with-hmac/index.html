@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="Mobynote">
 <meta property="og:description" content="微服务项目中需要与第三方API进行集成，由于安全要求，使用HMAC做为认证方式。下面介绍使用Kong实现HMAC认证的配置方式。 术语 HMAC（hash-based message authentication code，散列消息认证码），是一种通过特别方式计算后产生的消息认证码，使用密码散列函数（MD5, SHA-1, SHA-256, etc..），同时结合一个加密密钥。可以用来保证消息数据">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-11T14:26:03.740Z">
+<meta property="og:updated_time" content="2018-11-11T14:29:22.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KONG - 实现HMAC认证">
 <meta name="twitter:description" content="微服务项目中需要与第三方API进行集成，由于安全要求，使用HMAC做为认证方式。下面介绍使用Kong实现HMAC认证的配置方式。 术语 HMAC（hash-based message authentication code，散列消息认证码），是一种通过特别方式计算后产生的消息认证码，使用密码散列函数（MD5, SHA-1, SHA-256, etc..），同时结合一个加密密钥。可以用来保证消息数据">
@@ -374,7 +374,7 @@
                 
               
 
-              <time title="创建时间：2018-11-11 22:23:31 / 修改时间：22:26:03" itemprop="dateCreated datePublished" datetime="2018-11-11T22:23:31+08:00">2018-11-11</time>
+              <time title="创建时间：2018-11-11 22:23:31 / 修改时间：22:29:22" itemprop="dateCreated datePublished" datetime="2018-11-11T22:23:31+08:00">2018-11-11</time>
             
 
             
@@ -432,17 +432,20 @@
       
         <p>微服务项目中需要与第三方API进行集成，由于安全要求，使用HMAC做为认证方式。下面介绍使用Kong实现HMAC认证的配置方式。</p>
 <h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
-<li><strong>HMAC</strong>（hash-based message authentication code，散列消息认证码），是一种通过特别方式计算后产生的消息认证码，使用密码散列函数（MD5, SHA-1, SHA-256, etc..），同时结合一个加密密钥。可以用来保证消息数据的完整性，同时可以用来做某个消息的身份认证。</li>
-<li><strong>Kong</strong>，是一个可扩展的开源API网关。与其它API gateway组件一样可以提供鉴权、限流、日志、监控等能力，Kong的优势在与其插件模式，只需简单的配置（安装所需的插件）就可以扩展功能。<ul>
+<li><p><strong>HMAC</strong>（hash-based message authentication code，散列消息认证码），是一种通过特别方式计算后产生的消息认证码，使用密码散列函数（MD5, SHA-1, SHA-256, etc..），同时结合一个加密密钥。可以用来保证消息数据的完整性，同时可以用来做某个消息的身份认证。</p>
+</li>
+<li><p><strong>Kong</strong>，是一个可扩展的开源API网关。与其它API gateway组件一样可以提供鉴权、限流、日志、监控等能力，Kong的优势在与其插件模式，只需简单的配置（安装所需的插件）就可以扩展功能。</p>
+<a id="more"></a>
+<ul>
 <li>Service, 正如其名，是每个上游服务的抽象。例如微服务中的商品服务，订单服务，库存服务等等</li>
 <li>Route, 定义了客户端请求的路由规则，每个route都关联到Service，每个Service可以有多个Route</li>
 <li>Consumer, 一个Consumer代表一个消费对象（也可以说是用户）</li>
 <li>Credentail, 在HMAC插件中，一个Consumer可以配置多个Credentail，用来做身份认证和消息校验</li>
 </ul>
 </li>
-<li><strong>Docker</strong>，是一种基于操作系统的虚拟化技术。基于Linux内核的cgroup, namespace以及AUFS类的Union FS等技术，对进程进行封装隔离，隔离的进程独立与宿主和其它的隔离进程，因此称为容器。最初是基于LXC，从0.7版本以后开始去除LXC，使用自行开发的libcontainer，从1.11开始，则进一步演进为使用runC和containerd。相较传统虚拟机技术更为轻便、快捷。</li>
+<li><p><strong>Docker</strong>，是一种基于操作系统的虚拟化技术。基于Linux内核的cgroup, namespace以及AUFS类的Union FS等技术，对进程进行封装隔离，隔离的进程独立与宿主和其它的隔离进程，因此称为容器。最初是基于LXC，从0.7版本以后开始去除LXC，使用自行开发的libcontainer，从1.11开始，则进一步演进为使用runC和containerd。相较传统虚拟机技术更为轻便、快捷。</p>
+</li>
 </ul>
-<a id="more"></a>
 <h3 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h3><ol>
 <li>环境准备<ol>
 <li>准备API服务</li>
