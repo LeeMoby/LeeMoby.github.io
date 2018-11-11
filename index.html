@@ -332,6 +332,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mobynote.com/2018/11/11/kong-with-hmac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="留白">
+      <meta itemprop="description" content="一种态度">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mobynote">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/kong-with-hmac/" itemprop="url">
+                  KONG - 实现HMAC认证
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-11 22:23:31 / 修改时间：22:26:03" itemprop="dateCreated datePublished" datetime="2018-11-11T22:23:31+08:00">2018-11-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>微服务项目中需要与第三方API进行集成，由于安全要求，使用HMAC做为认证方式。下面介绍使用Kong实现HMAC认证的配置方式。</p>
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
+<li><strong>HMAC</strong>（hash-based message authentication code，散列消息认证码），是一种通过特别方式计算后产生的消息认证码，使用密码散列函数（MD5, SHA-1, SHA-256, etc..），同时结合一个加密密钥。可以用来保证消息数据的完整性，同时可以用来做某个消息的身份认证。</li>
+<li><strong>Kong</strong>，是一个可扩展的开源API网关。与其它API gateway组件一样可以提供鉴权、限流、日志、监控等能力，Kong的优势在与其插件模式，只需简单的配置（安装所需的插件）就可以扩展功能。<ul>
+<li>Service, 正如其名，是每个上游服务的抽象。例如微服务中的商品服务，订单服务，库存服务等等</li>
+<li>Route, 定义了客户端请求的路由规则，每个route都关联到Service，每个Service可以有多个Route</li>
+<li>Consumer, 一个Consumer代表一个消费对象（也可以说是用户）</li>
+<li>Credentail, 在HMAC插件中，一个Consumer可以配置多个Credentail，用来做身份认证和消息校验</li>
+</ul>
+</li>
+<li><strong>Docker</strong>，是一种基于操作系统的虚拟化技术。基于Linux内核的cgroup, namespace以及AUFS类的Union FS等技术，对进程进行封装隔离，隔离的进程独立与宿主和其它的隔离进程，因此称为容器。最初是基于LXC，从0.7版本以后开始去除LXC，使用自行开发的libcontainer，从1.11开始，则进一步演进为使用runC和containerd。相较传统虚拟机技术更为轻便、快捷。</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/11/kong-with-hmac/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://mobynote.com/2018/07/31/install-rdm-on-macos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1072,7 +1245,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1120,7 +1293,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
