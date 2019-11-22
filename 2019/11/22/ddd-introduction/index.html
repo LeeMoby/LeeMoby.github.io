@@ -112,29 +112,25 @@
 
 
 
-  <meta name="description" content="背景：最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。  经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键">
-<meta name="keywords" content="autohotkey,windows,ahk">
+  <meta name="description" content="DDD的是什么DDD: Domain Driven Design，领域驱动设计，它是脱离了语言、脱离了技术、脱离了低级趣味的一种架构风格。• 脱离了语言，不限定C++、.NET、Java等• 脱离了技术，不聊服务器、网络、存储、数据库• 脱离了低级趣味，不推荐“Ctrl C/V”和“不就是CRUD嘛” 它是一种观点，一种态度，一种思想• 业务价值是第一目标的观点• 交流中只使用同一种语言的态度•">
+<meta name="keywords" content="ddd,domain,design,postgres,json-server">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用AHK阻止Windows系统自动锁定">
-<meta property="og:url" content="http://lauby.me/2018/07/25/autohotkey-lockout/index.html">
+<meta property="og:title" content="几句话聊DDD">
+<meta property="og:url" content="http://lauby.me/2019/11/22/ddd-introduction/index.html">
 <meta property="og:site_name" content="lauby">
-<meta property="og:description" content="背景：最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。  经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键">
+<meta property="og:description" content="DDD的是什么DDD: Domain Driven Design，领域驱动设计，它是脱离了语言、脱离了技术、脱离了低级趣味的一种架构风格。• 脱离了语言，不限定C++、.NET、Java等• 脱离了技术，不聊服务器、网络、存储、数据库• 脱离了低级趣味，不推荐“Ctrl C/V”和“不就是CRUD嘛” 它是一种观点，一种态度，一种思想• 业务价值是第一目标的观点• 交流中只使用同一种语言的态度•">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1ftmco7adnuj304i04vjrq.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1ftmco6wpb5j305u01igli.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1ftmco7d3efj308u059mxj.jpg">
-<meta property="og:updated_time" content="2018-07-25T12:46:15.103Z">
+<meta property="og:updated_time" content="2019-11-22T10:13:53.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用AHK阻止Windows系统自动锁定">
-<meta name="twitter:description" content="背景：最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。  经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1ftmco7adnuj304i04vjrq.jpg">
+<meta name="twitter:title" content="几句话聊DDD">
+<meta name="twitter:description" content="DDD的是什么DDD: Domain Driven Design，领域驱动设计，它是脱离了语言、脱离了技术、脱离了低级趣味的一种架构风格。• 脱离了语言，不限定C++、.NET、Java等• 脱离了技术，不聊服务器、网络、存储、数据库• 脱离了低级趣味，不推荐“Ctrl C/V”和“不就是CRUD嘛” 它是一种观点，一种态度，一种思想• 业务价值是第一目标的观点• 交流中只使用同一种语言的态度•">
 
 
 
 
 
 
-  <link rel="canonical" href="http://lauby.me/2018/07/25/autohotkey-lockout/"/>
+  <link rel="canonical" href="http://lauby.me/2019/11/22/ddd-introduction/"/>
 
 
 
@@ -144,7 +140,7 @@
   };
 </script>
 
-  <title>使用AHK阻止Windows系统自动锁定 | lauby</title>
+  <title>几句话聊DDD | lauby</title>
   
 
 
@@ -336,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lauby.me/2018/07/25/autohotkey-lockout/">
+    <link itemprop="mainEntityOfPage" href="http://lauby.me/2019/11/22/ddd-introduction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="留白">
@@ -353,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用AHK阻止Windows系统自动锁定
+          <h1 class="post-title" itemprop="name headline">几句话聊DDD
               
             
           </h1>
@@ -378,7 +374,7 @@
                 
               
 
-              <time title="创建时间：2018-07-25 16:49:23 / 修改时间：20:46:15" itemprop="dateCreated datePublished" datetime="2018-07-25T16:49:23+08:00">2018-07-25</time>
+              <time title="创建时间：2019-11-22 18:08:42 / 修改时间：18:13:53" itemprop="dateCreated datePublished" datetime="2019-11-22T18:08:42+08:00">2019-11-22</time>
             
 
             
@@ -434,22 +430,22 @@
       
 
       
-        <blockquote>
-<p><strong>背景：</strong>最近在使用某云桌面，客户端是Windows系统。它有自动锁定机制，而且与Windows操作系统的自动锁定是独立的。也就是说，在Windows系统中设置了禁止锁屏或者关闭显示器、硬盘等是无效的，云桌面仍然会在没有操作后的5分钟之后锁定系统。</p>
-</blockquote>
-<p>经测试发现，云桌面的自动锁定机制是：鼠标和键盘空闲超过5分钟，就会锁定系统（只动鼠标或者只动键盘也是会被判定为闲置，会被锁定）。所以我们需要让鼠标和键盘周期性地动起来，而且尽量不影响正常的操作。</p>
-<a id="more"></a>
-<p>AutoHotKey是一款Windows上的自动化快捷键脚本（Automation, Hotkeys, Scripting）。<a href="https://autohotkey.com/docs/AutoHotkey.htm" target="_blank" rel="noopener">https://autohotkey.com/docs/AutoHotkey.htm</a></p>
-<h4 id="安装AHK"><a href="#安装AHK" class="headerlink" title="安装AHK"></a>安装AHK</h4><p>从官网下载安装包，双击进行安装。</p>
-<h4 id="编写AHK脚本"><a href="#编写AHK脚本" class="headerlink" title="编写AHK脚本"></a>编写AHK脚本</h4><p>将下面脚本保存为<code>Iamhere.ahk</code>文件。<br>（该脚本会每分钟自动按下键盘的<code>Scroll Lock</code>键同时移动鼠标一个像素并立即移回原位）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">; I'm always online</span><br><span class="line">; Press Scroll Lock key and move mouse one pixel per minute.</span><br><span class="line">; Quit: Press Ctrl + Alt + Q.</span><br><span class="line"></span><br><span class="line">counter := new SecondCounter</span><br><span class="line">counter.Start()</span><br><span class="line">^!q::</span><br><span class="line">	counter.Stop()</span><br><span class="line">ExitApp</span><br><span class="line"></span><br><span class="line">; An example class for counting the seconds...</span><br><span class="line">class SecondCounter &#123;</span><br><span class="line">    __New() &#123;</span><br><span class="line">        this.interval := 60000</span><br><span class="line">        this.timer := ObjBindMethod(this, "Tick")</span><br><span class="line">    &#125;</span><br><span class="line">    Start() &#123;</span><br><span class="line">        timer := this.timer</span><br><span class="line">        SetTimer % timer, % this.interval</span><br><span class="line">    &#125;</span><br><span class="line">    Stop() &#123;</span><br><span class="line">        timer := this.timer</span><br><span class="line">        SetTimer % timer, Off</span><br><span class="line">    &#125;</span><br><span class="line">    Tick() &#123;</span><br><span class="line">		Send &#123;ScrollLock&#125;</span><br><span class="line">		Send &#123;ScrollLock&#125;</span><br><span class="line">		MouseMove, 0, 1, 0, R</span><br><span class="line">		MouseMove, 0, -1, 0, R</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以替换<code>ScrollLock</code>为其他键，鼠标移动是<code>MouseMove, 0, 1, 0, R</code>指的是在相对位置纵向移动一个像素，参数依次是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0（横向）,</span><br><span class="line">1（纵向）,</span><br><span class="line">0（速度，值越小速度越快）, </span><br><span class="line">R（相对位置，如果绝对位置则不用设置）</span><br></pre></td></tr></table></figure></p>
-<h4 id="生成exe文件"><a href="#生成exe文件" class="headerlink" title="生成exe文件"></a>生成exe文件</h4><p>使用AutoHotKey将刚才的脚本文件转换为可执行的exe文件，配上图标。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1ftmco7adnuj304i04vjrq.jpg" alt="I&#39;mhere"></p>
-<h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>现在就可以使用双击使用啦。<br>启动后，会在任务栏出现小图标 。</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1ftmco6wpb5j305u01igli.jpg" alt="exitprogram"></p>
-<p>如果要退出右键任务栏的小图标，点击Exit （<strong>快捷键：</strong><code>Ctrl + Alt + Q</code>）。</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1ftmco7d3efj308u059mxj.jpg" alt="taskbar"></p>
+        <h3 id="DDD的是什么"><a href="#DDD的是什么" class="headerlink" title="DDD的是什么"></a>DDD的是什么</h3><p><strong>DDD: Domain Driven Design</strong>，领域驱动设计，它是脱离了语言、脱离了技术、脱离了低级趣味的一种架构风格。<br>• 脱离了语言，不限定C++、.NET、Java等<br>• 脱离了技术，不聊服务器、网络、存储、数据库<br>• 脱离了低级趣味，不推荐“Ctrl C/V”和“不就是CRUD嘛”</p>
+<p>它是一种观点，一种态度，一种思想<br>• 业务价值是第一目标的观点<br>• 交流中只使用同一种语言的态度<br>• 指引我们理解和实现业务的思想</p>
+ <a id="more"></a>
+<p>它期望你能讲人话、做人事。</p>
+<p>“领域驱动设计”，“领域”驱动“设计”，非常明确，设计是领域驱动出来的，不要一开始就向客户输出怎么设计架构、怎么设计模型、怎么设计数据库，我们需要先弄清楚领域，熟悉了领域，设计就是水到渠成的事了。</p>
+<h3 id="然而什么是领域（Domain）"><a href="#然而什么是领域（Domain）" class="headerlink" title="然而什么是领域（Domain）"></a>然而什么是领域（Domain）</h3><p>“自行车界我亡者农药打的最好，亡者农药界我砖块搬的最快，搬砖界我棉花弹的最软”。这里面的“自行车界”、“亡者农药界”、“搬砖界”、“棉花界”都是领域，每个不同的领域都有它特有的名词、规律等。而领域中有我们的业务，它描述了我们做软件的目的，业务就是价值。<br><strong>什么是业务？</strong><br>让用户在3秒内的看到商品照片</p>
+<p><strong>什么不是业务？</strong><br>把商品照片放在CDN，后端服务器得用Redis，API限制3000毫秒</p>
+<p><strong>什么是业务？</strong><br>当用户A正在更新商品信息的时候，用户B修改了同一个商品，而用户A保存的时候需要拒绝保存并且给予提示数据已被修改</p>
+<p><strong>什么不是业务？</strong><br>给更新商品功能加上乐观锁，保存的时候检查数据版本，如果版本冲突需要抛出业务异常</p>
+<h3 id="在聊领域和业务的时候最重要的是什么？"><a href="#在聊领域和业务的时候最重要的是什么？" class="headerlink" title="在聊领域和业务的时候最重要的是什么？"></a>在聊领域和业务的时候最重要的是什么？</h3><p>上帝阻止人类建造巴别塔的方式，就是让人类说不同的语言。所以我们如果真要打造一座巴别塔，首要任务就是统一语言（ubiquitous language）<br>“南京市长江大桥”，说的是江大桥当选市长的故事，还是修建长江大桥的故事？“肉夹馍”，是肉夹在馍里，还是肉里夹着馍？“丁丁炒面”，是新疆美食，还是男默女泪…<br>在“吃货”这个领域里，很难分辨清楚这个肉夹馍的“夹”到底是肉夹在馍里，还是肉里夹着馍，这时候需要“老陕”作为领域专家来讲给大家。<br>对于统一语言，还有一段经典对话：<br>-你是哪个省的？<br>-你猜<br>-你给个范围啊<br>-我只能提示你，是以H打头<br>-湖南<br>-不对<br>-湖北<br>-不对<br>-河南<br>-不对<br>-河北<br>-不对<br>-猜不出来！<br>-Hu建</p>
+<h3 id="然而什么是设计（Design）"><a href="#然而什么是设计（Design）" class="headerlink" title="然而什么是设计（Design）"></a>然而什么是设计（Design）</h3><p>设计就是软件。广义上它描述了我们系统的结构，应用的技术方案、设计模式、面向对象；狭义上它确定了我们代码该怎么写，每个类每个方法每行代码。在领悟到DDD的思想，认识了Domain，Design就会自然而然。女孩说只开一个房间好了，你说没事不差钱。兄弟，像你这样的钢铁直男的悟性，DDD也不救了你。</p>
+<h3 id="然而什么是驱动（Driven）"><a href="#然而什么是驱动（Driven）" class="headerlink" title="然而什么是驱动（Driven）"></a>然而什么是驱动（Driven）</h3><p>这个就不聊了吧，自己搜，不要问度娘，问了就是X则西</p>
+<p>好了，看到这里，你已经了解到了DDD的精髓，可以喜大普奔：3D在手，天下我有！回家激动地告诉女朋友：“亲爱的！我有个振奋人心的好消息，我学到了DDD啦！”<br>女朋友以关爱智障的眼神看着你：“呦，你还真的棒棒的呢，那我也学到了满汉全席的秘诀，食材适量、调料少许…但我还是做不出来。给，这是今日份的乌江榨菜，啃完洗碗刷锅噢。”</p>
+<p>对呀，道理都懂，动手就懵。而且不要什么都用DDD，DDD不是暖男、不是老实人。“不行就找个老实人嫁了吧”，这是万万不可以的，DDD没那么随便。</p>
+<p>请期待下期《如何打造一个爆款DDD风格的架构》</p>
+<p>previously on Heros</p>
 
       
     </div>
@@ -499,11 +495,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/autohotkey/" rel="tag"># autohotkey</a>
+            <a href="/tags/ddd/" rel="tag"># ddd</a>
           
-            <a href="/tags/windows/" rel="tag"># windows</a>
+            <a href="/tags/domain/" rel="tag"># domain</a>
           
-            <a href="/tags/ahk/" rel="tag"># ahk</a>
+            <a href="/tags/design/" rel="tag"># design</a>
+          
+            <a href="/tags/postgres/" rel="tag"># postgres</a>
+          
+            <a href="/tags/json-server/" rel="tag"># json-server</a>
           
         </div>
       
@@ -516,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/23/emacs-tutorial/" rel="next" title="Emacs Tutorial (26.1)">
-                <i class="fa fa-chevron-left"></i> Emacs Tutorial (26.1)
+              <a href="/2018/11/11/kong-with-hmac/" rel="next" title="KONG - 实现HMAC认证">
+                <i class="fa fa-chevron-left"></i> KONG - 实现HMAC认证
               </a>
             
           </div>
@@ -525,10 +525,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/31/install-rdm-on-macos/" rel="prev" title="Build RDM from source">
-                Build RDM from source <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -716,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装AHK"><span class="nav-number">1.</span> <span class="nav-text">安装AHK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写AHK脚本"><span class="nav-number">2.</span> <span class="nav-text">编写AHK脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成exe文件"><span class="nav-number">3.</span> <span class="nav-text">生成exe文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行"><span class="nav-number">4.</span> <span class="nav-text">运行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DDD的是什么"><span class="nav-number">1.</span> <span class="nav-text">DDD的是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然而什么是领域（Domain）"><span class="nav-number">2.</span> <span class="nav-text">然而什么是领域（Domain）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在聊领域和业务的时候最重要的是什么？"><span class="nav-number">3.</span> <span class="nav-text">在聊领域和业务的时候最重要的是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然而什么是设计（Design）"><span class="nav-number">4.</span> <span class="nav-text">然而什么是设计（Design）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#然而什么是驱动（Driven）"><span class="nav-number">5.</span> <span class="nav-text">然而什么是驱动（Driven）</span></a></li></ol></div>
             
 
           </div>
