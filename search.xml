@@ -21,11 +21,11 @@
         <category>tech</category>
       </categories>
       <tags>
-        <tag>postgres</tag>
-        <tag>json-server</tag>
         <tag>kong</tag>
         <tag>docker</tag>
         <tag>hmac</tag>
+        <tag>postgres</tag>
+        <tag>json-server</tag>
       </tags>
   </entry>
   <entry>
